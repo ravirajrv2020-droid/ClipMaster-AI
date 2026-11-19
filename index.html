@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ClipMaster AI</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#090b14;color:white;font-family:Arial,sans-serif}
+header{padding:20px;border-bottom:1px solid #303044;color:#a78bfa;font-size:23px;font-weight:bold}
+main{max-width:700px;margin:35px auto;padding:18px}
+h1{text-align:center;font-size:32px}
+.sub{text-align:center;color:#aaa;line-height:1.6}
+.card{background:#171a2a;padding:22px;border:1px solid #33364b;border-radius:16px;margin-top:25px}
+label{display:block;margin:18px 0 9px;font-weight:bold}
+input,select{width:100%;padding:14px;border-radius:9px;background:#0c1020;color:white;border:1px solid #45465a}
+.upload{padding:20px;border:2px dashed #8170c7;border-radius:12px;text-align:center}
+button{width:100%;padding:16px;margin-top:22px;background:#8055ed;color:white;border:0;border-radius:10px;font-size:17px;font-weight:bold}
+#status{display:none;margin-top:18px;padding:15px;background:#262442;border-radius:10px;color:#d7c8ff}
+footer{text-align:center;color:#888;padding:30px}
+</style>
+</head>
+<body>
+<header>✦ ClipMaster AI</header>
+<main>
+<h1>Turn Long Videos Into Shorts</h1>
+<p class="sub">AI-powered automatic video clipping. Find your best moments and create Shorts.</p>
+<div class="card">
+<h2>🚀 Create Your Clips</h2>
+<label>YouTube Video Link</label>
+<input id="url" type="url" placeholder="Paste YouTube URL here">
+<p class="sub">OR upload your own video</p>
+<label>Upload Video</label>
+<div class="upload">
+<input id="file" type="file" accept="video/*">
+</div>
+<label>Clip Duration</label>
+<select id="duration">
+<option value="30">30 Seconds</option>
+<option value="60">60 Seconds</option>
+</select>
+<label>Video Format</label>
+<select id="format">
+<option>Vertical 9:16</option>
+<option>Landscape 16:9</option>
+</select>
+<label>Caption Language</label>
+<select id="language">
+<option>English</option>
+<option>Hindi</option>
+<option>Hinglish</option>
+</select>
+<button onclick="createClips()">✨ Find Viral Moments</button>
+<div id="status"></div>
+</div>
+</main>
+<footer>ClipMaster AI © 2026</footer>
+<script>
+function createClips(){
+const url=document.getElementById("url").value.trim();
+const file=document.getElementById("file").files[0];
+const status=document.getElementById("status");
+if(!url&&!file){alert("Please enter a YouTube link or upload a video.");return;}
+if(url&&!file&&!/^https?:\/\/(www\.)?(youtube\.com|youtu\.be)\//i.test(url)){
+alert("Please enter a valid YouTube link.");return;
+}
+status.style.display="block";
+status.textContent="Your settings are ready! AI video processing will be connected in the next development phase.";
+}
+</script>
+</body>
+</html>
